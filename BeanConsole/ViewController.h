@@ -10,6 +10,7 @@
 
 @interface ViewController : NSViewController
 
+@property (unsafe_unretained) IBOutlet NSTextView *consoleOutputTextView;
 
 @end
 
