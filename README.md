@@ -7,3 +7,5 @@ This is a Mac OS X desktop app that displays the serial output of all connected 
 ## Instructions
 1. Connect to a single bean with Bean Loader
 2. Run this app
+
+Learn more about PTD's LightBlue Bean at http://punchthrough.com/bean/.
