@@ -68,10 +68,14 @@
 -(void)bean:(PTDBean *)bean serialDataReceived:(NSData *)data
 {
     NSString *serialOutput = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString *uuidSubstring = [bean.identifier.UUIDString substringFromIndex:bean.identifier.UUIDString.length-4];
+//    NSString *uuidSubstring = [bean.identifier.UUIDString substringFromIndex:bean.identifier.UUIDString.length-4];
 //    serialOutput = [NSString stringWithFormat:@"%@-%@:%@", bean.name, uuidSubstring, serialOutput];
-    NSString *newString = [self.consoleOutputTextView.string stringByAppendingString:serialOutput];
-    self.consoleOutputTextView.string = newString;
+
+    if(serialOutput)
+    {
+        serialOutput = [self.consoleOutputTextView.string stringByAppendingString:serialOutput];
+        self.consoleOutputTextView.string = serialOutput;
+    }
     
     [self.consoleOutputTextView scrollRangeToVisible: NSMakeRange(self.consoleOutputTextView.string.length, 0)];
 }
