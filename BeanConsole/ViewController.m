@@ -72,6 +72,8 @@
 //    serialOutput = [NSString stringWithFormat:@"%@-%@:%@", bean.name, uuidSubstring, serialOutput];
     NSString *newString = [self.consoleOutputTextView.string stringByAppendingString:serialOutput];
     self.consoleOutputTextView.string = newString;
+    
+    [self.consoleOutputTextView scrollRangeToVisible: NSMakeRange(self.consoleOutputTextView.string.length, 0)];
 }
 
 - (IBAction)clearButtonPressed:(NSButton *)sender {
